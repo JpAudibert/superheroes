@@ -15,6 +15,11 @@ module.exports = {
         allowNull: false,
       },
 
+      nickname: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+
       power: {
         type: Sequelize.STRING,
         allowNull: false,
