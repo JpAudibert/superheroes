@@ -8,7 +8,10 @@ class Superhero extends Model {
       birthday: DataTypes.STRING,
       birthPlace: DataTypes.STRING,
     },
-    { sequelize });
+    {
+      sequelize,
+      tableName: 'superheroes',
+    });
   }
 }
 
