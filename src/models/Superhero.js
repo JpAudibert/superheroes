@@ -16,7 +16,7 @@ class Superhero extends Model {
   }
 
   static associate(models) {
-    // foreign key: como a PK é na talbela a ser referenciada
+    // foreign key: how the PK is referenced in the desired table
     this.hasMany(models.Kingdom, { foreignKey: 'superheroId', as: 'kingdoms' });
   }
 }
