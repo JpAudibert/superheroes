@@ -12,7 +12,7 @@ routes.put('/superheroes/:id', SuperheroController.update);
 routes.delete('/superheroes/:id', SuperheroController.delete);
 
 routes.get('/kingdoms', KingdomController.index);
-routes.get('/superheroes/:superheroId/kingdoms', KingdomController.show);
-routes.post('/superheroes/:superheroId/kingdoms', KingdomController.store);
+routes.get('/kingdoms/:superheroId', KingdomController.show);
+routes.post('/kingdoms/:superheroId', KingdomController.store);
 
 module.exports = routes;
