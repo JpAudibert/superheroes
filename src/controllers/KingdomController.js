@@ -1,8 +1,21 @@
 const Kingdom = require('../models/Kingdom');
 const Superhero = require('../models/Superhero');
 
+
 module.exports = {
   async index(req, res) {
+    try {
+      const superheroes = await Superhero.findAll({
+        include: { association: 'kingdoms' },
+      });
+
+      return res.json(superheroes);
+    } catch (error) {
+      return res.status(400).json({ error: 'Oops, something went wrong :(' });
+    }
+  },
+
+  async show(req, res) {
     try {
       const { superheroId } = req.params;
 

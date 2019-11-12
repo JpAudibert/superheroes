@@ -1,8 +1,8 @@
 # Super Heroes
 
-This idea was concepted after watchiing Aquaman movie.
+This idea was concepted after watching Aquaman movie.
 
-It consists in a system built with the Rest API architecture.
+It consists in a system built with the Rest API architecture, entirely from scratch.
 In a first moment the server side is being built. Using Express, postgres and Node
 the purpose is to get a way to store and manage every hero that you may think.
 
