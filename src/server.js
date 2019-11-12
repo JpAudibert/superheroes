@@ -1,15 +1,5 @@
-const express = require('express');
-const routes = require('./routes');
+const app = require('./app');
 
 const PORT = 3333;
 
-require('../database');
-
-const app = express();
-
-app.use(express.json());
-app.use(routes);
-
-// app.listen(PORT);
-
-module.exports = app;
+app.listen(PORT);

@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 const request = require('supertest');
-const app = require('../server');
+const app = require('../app');
 
 const MOCK_SUPERHERO_CREATE = {
   name: 'Bruce Wayne',
@@ -10,6 +10,11 @@ const MOCK_SUPERHERO_CREATE = {
   birthPlace: 'Gotham City',
 };
 
+beforeAll(() => {
+  // eslint-disable-next-line no-console
+  console.log('Testing Time!');
+});
+
 // eslint-disable-next-line func-names
 describe('Testing Supeheroes CRUD', () => {
   test('Superheroes insertion', async () => {
@@ -18,8 +23,4 @@ describe('Testing Supeheroes CRUD', () => {
     expect(res.statusCode).toEqual(200);
     expect(res.body).toHaveProperty('post');
   });
-});
-
-afterAll(() => {
-  app.close();
 });
