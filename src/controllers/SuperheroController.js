@@ -6,9 +6,13 @@ module.exports = {
     try {
       const superheroes = await Superhero.findAll();
 
+      if (!superheroes || superheroes === []) {
+        return res.status(400).json({ error: `Oops, superheroes not found` });
+      }
+
       return res.json(superheroes);
     } catch (error) {
-      return res.status(400).send({ error: `There's no heroes, my friend :(` });
+      return res.status(400).json({ error: `There's no heroes, my friend :(` });
     }
   },
 
@@ -17,6 +21,10 @@ module.exports = {
       const { id } = req.params;
 
       const superhero = await Superhero.findByPk(id);
+
+      if (!superhero) {
+        return res.status(400).json({ error: `Oops, superhero not found :(` });
+      }
 
       return res.json(superhero);
     } catch (error) {
@@ -40,7 +48,7 @@ module.exports = {
 
       return res.json(superhero);
     } catch (error) {
-      return res.status(400).send({ error: `Oops, something went wrong :(` });
+      return res.status(400).json({ error: `Oops, something went wrong :(` });
     }
   },
 
@@ -52,6 +60,10 @@ module.exports = {
       } = req.body;
       const superhero = await Superhero.findByPk(id);
 
+      if (!superhero) {
+        return res.status(400).json({ error: `Oops, superhero not found :(` });
+      }
+
       superhero.update({
         name,
         nickname,
@@ -62,7 +74,7 @@ module.exports = {
 
       return res.json(superhero);
     } catch (error) {
-      return res.status(400).send({ error: `Oops, something went wrong :(` });
+      return res.status(400).json({ error: `Oops, something went wrong :(` });
     }
   },
 
@@ -76,7 +88,7 @@ module.exports = {
 
       return res.json({ success: `${nickname} does not exist anymore :)` });
     } catch (error) {
-      return res.status(400).send({ error: `Oops, user not found, my friend :(` });
+      return res.status(400).json({ error: `Oops, user not found, my friend :(` });
     }
   },
 };

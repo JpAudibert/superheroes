@@ -17,6 +17,8 @@ module.exports = {
           model: 'superheroes',
           key: 'id',
         },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
       },
 
       name: {
