@@ -15,7 +15,9 @@ class Superhero extends Model {
     });
   }
 
-  static associate() {}
+  static associate(models) {
+    this.hasMany(models.Kingdom, { foreignKey: 'id', as: 'kingdoms' });
+  }
 }
 
 module.exports = Superhero;
