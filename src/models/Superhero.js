@@ -14,6 +14,8 @@ class Superhero extends Model {
       tableName: 'superheroes',
     });
   }
+
+  static associate() {}
 }
 
 module.exports = Superhero;
