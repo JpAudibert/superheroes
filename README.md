@@ -15,7 +15,7 @@ The database allows the user tu insert a hero and also its kingdom, for example:
 
 Describing with details and images both heroes and kingdoms.
 
-# Why I building this?
+# Why I'm building this?
 
 I'm continuosly trying to improve my Node skills. For this project, the purpose
 is to get autonomy while using sequelize. I'm also in the way to get rid of the
