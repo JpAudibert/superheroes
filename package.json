@@ -9,7 +9,7 @@
     "test": "jest --detectOpenHandles --testTimeout=10000"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jest": "^24.9.0",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
